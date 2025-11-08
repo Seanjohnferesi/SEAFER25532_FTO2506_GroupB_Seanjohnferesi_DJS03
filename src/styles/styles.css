@@ -5,3 +5,27 @@ body{
     /* margin-top: 75px; */
     padding: 75px 25px 45px 25px;
 }
+
+@layer Filter{
+    .filter{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 30px 0;
+    }
+
+    .filter > h2{
+        font-size: 20px;
+        margin: 0;
+        font-weight: 500
+    }
+
+    .filter > select{
+        border: none;
+        padding: 5px 18px;
+        border-radius: 7px;
+        background-color: var(--color-btn);
+        color: var(--color-text);
+        font-size: 16px;
+    }
+}

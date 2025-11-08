@@ -3,6 +3,7 @@ import PodcastCard from "./components/PodcastCard";
 import "./styles/App.css";
 import "./styles/LoadingState.css"
 import Header from "./components/Header";
+import Filter from "./components/Filter";
 
 export default function App() {
     const [podcasts, setPodcasts] = useState([]);
@@ -61,6 +62,8 @@ export default function App() {
     return (
         <main className="app-root">
             <Header />
+
+            <Filter />
 
             <section className="podcast-grid">
             {podcasts.map((podcast) => (
