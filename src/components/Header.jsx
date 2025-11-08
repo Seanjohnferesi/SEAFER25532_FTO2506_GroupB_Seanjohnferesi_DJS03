@@ -8,7 +8,7 @@ export default function Header() {
         <header className="app-header">
             <div className="icon-name-wrapper">
                 <img src={appIcon} alt="app icon" />
-                <h1>Forger Talks</h1>
+                <h1 className="header-title">Forger Talks</h1>
             </div>
 
             <div className="profile-wrapper">

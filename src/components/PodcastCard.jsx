@@ -2,21 +2,15 @@ import React from "react";
 import "../styles/PodcastCard.css";
 import  seasonIcon from "../assets/season.png"
 import { genres } from "../data.js";
+import { formatDate } from "../utils/formatDate.js";
+import { getGenreTitle } from "../utils/getGenreTitle.js";
 
-export default function PodcastCard({podcast}) {
-    const formatDate = (dateStr) => {
-        return new Date(dateStr).toLocaleDateString("en-US", {
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        });
-    }
-        const showGenres = genres.filter(genre => genre.shows.includes(podcast.id))
-        .map(gen => gen.title)
-
+export default function PodcastCard({podcast, openModal}) {
+    
+    const showGenres = getGenreTitle(podcast.id, genres)
 
     return (    
-        <div className="card">
+        <div className="card" onClick={() => openModal(podcast)}>
             <div className="podcast-img-div">
                 <img src={podcast.image} alt={podcast.title} className="podcast-img"/>
             </div>

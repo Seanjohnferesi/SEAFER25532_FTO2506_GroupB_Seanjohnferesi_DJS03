@@ -20,7 +20,7 @@ header{
     gap: 15px;
 }
 
-h1{
+.header-title{
     color: var(--color-text);
     font-size: 28px;
 }

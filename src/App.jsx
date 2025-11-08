@@ -4,11 +4,17 @@ import "./styles/App.css";
 import "./styles/LoadingState.css"
 import Header from "./components/Header";
 import Filter from "./components/Filter";
+import PodcastModal from "./components/PodcastModal";
 
 export default function App() {
     const [podcasts, setPodcasts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [selectedPodcast, setSelectedPodcast] = useState(null);
+
+    const openModal = (podcast) => {setSelectedPodcast(podcast)};
+    const closeModal = () => { setSelectedPodcast(null) }
 
 
     const fetchPodcasts = useCallback(async (signal) => { 
@@ -62,14 +68,19 @@ export default function App() {
     return (
         <main className="app-root">
             <Header />
-
             <Filter />
 
             <section className="podcast-grid">
             {podcasts.map((podcast) => (
-                <PodcastCard key={podcast.id} podcast={podcast} />
+                <PodcastCard key={podcast.id} podcast={podcast} openModal={openModal} />
             ))}
             </section>
+             {selectedPodcast && (
+            <PodcastModal 
+                podcast={selectedPodcast} 
+                closeModal={() => setSelectedPodcast(null)} 
+            />
+        )}
         </main>
     )
 }

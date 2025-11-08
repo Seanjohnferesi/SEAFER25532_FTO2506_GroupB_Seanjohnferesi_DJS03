@@ -6,6 +6,23 @@ body{
     padding: 75px 25px 45px 25px;
 }
 
+* {
+    box-sizing: border-box;
+    font-family: "poppins";
+}
+
+:root{
+    --color-bg: #EAF4FB;
+    --color-header: #85B4D4;
+    --color-div-bg: var(--color-header);
+    --color-border: #c5c5c5;
+    --color-text: white;
+    --color-content-text:rgba(0, 0, 0, 0.8);
+    --color-btn: #2F719D;
+    --color-backdrop: #00000054;
+}
+
+
 @layer Filter{
     .filter{
         display: flex;
