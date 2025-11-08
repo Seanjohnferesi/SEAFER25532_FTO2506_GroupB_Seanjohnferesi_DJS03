@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import PodcastCard from "./components/PodcastCard";
 import "./styles/App.css";
+import "./styles/LoadingState.css"
 
 export default function App() {
     const [podcasts, setPodcasts] = useState([]);
@@ -47,10 +48,10 @@ export default function App() {
                     <h1>Forger Talks</h1>
                 </header>
                 <div className="status">
-                    <span>f</span>
-                    <span>f</span>
-                    <span>f</span>
-                    <span>f</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </main>
         );
