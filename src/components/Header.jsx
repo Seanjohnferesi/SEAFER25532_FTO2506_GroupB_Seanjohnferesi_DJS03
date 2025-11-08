@@ -1,6 +1,7 @@
 import "../styles/Header.css"
 import searchIcon from "../assets/search.png"
 import appIcon from "../assets/app-icon.png"
+import "../styles/styles.css"
 import man from "../assets/man.png"
 
 export default function Header() {

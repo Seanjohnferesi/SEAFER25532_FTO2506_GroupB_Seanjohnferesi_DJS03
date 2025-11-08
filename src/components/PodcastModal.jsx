@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/PodcastModal.css";
+import "../styles/styles.css"
 import closeBtn from "../assets/cross-black.png"
 import calendar from "../assets/calendar.png"
 import { genres  } from "../data";

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import PodcastCard from "./components/PodcastCard";
 import "./styles/App.css";
 import "./styles/LoadingState.css"
+import "./styles/styles.css"
 import Header from "./components/Header";
 import Filter from "./components/Filter";
 import PodcastModal from "./components/PodcastModal";

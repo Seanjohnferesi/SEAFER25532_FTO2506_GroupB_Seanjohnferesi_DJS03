@@ -168,7 +168,7 @@
 
     }
 
-    .season-title, .season-description, .ep-numb{
+    .season-title{
         margin: 0
     }
 
@@ -176,13 +176,29 @@
         font-weight: 500;
     }
 
-    .season-description{
-        font-size: 0.75rem;
-        color: var(--color-content-text);
-    }
-    .ep-num{
-        font-size: .85rem;
-        color: var(--color-content-text);
+}
+
+@media (max-width: 480px) {
+        /* modal */
+
+    .modal-title{
+        font-size: 1.5rem;
     }
     
+    .modal-content{
+        display: flex;
+        flex-direction: column;
+        padding-top: 80px;
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* width: 330px; */
+        /* height: 600px;; */
+    }
+
+    .flex-wrapper{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
