@@ -8,11 +8,30 @@ import Filter from "./components/Filter";
 import PodcastModal from "./components/PodcastModal";
 
 export default function App() {
+    /**
+ * State for storing the list of podcasts.
+ * @type {[Array, Function]} podcasts - Array of podcast objects, setPodcasts - function to update podcasts.
+ */
     const [podcasts, setPodcasts] = useState([]);
+
+/**
+ * State for tracking the loading status of fetching podcasts.
+ * @type {[boolean, Function]} loading - true if fetching is in progress, false otherwise.
+ */
     const [loading, setLoading] = useState(true);
+
+/**
+ * State for storing any error that occurs during fetching.
+ * @type {[Error|null, Function]} error - Error object if fetch fails, null otherwise.
+ */
     const [error, setError] = useState(null);
 
+/**
+ * State for storing the currently selected podcast for modal display.
+ * @type {[Object|null, Function]} selectedPodcast - Podcast object that is selected, or null if none.
+ */
     const [selectedPodcast, setSelectedPodcast] = useState(null);
+
 
     const openModal = (podcast) => {setSelectedPodcast(podcast)};
     const closeModal = () => { setSelectedPodcast(null) }
@@ -44,6 +63,10 @@ export default function App() {
     }, []);
 
 
+/**
+ * Fetches podcasts when component mounts and cleans up on unmount.
+ * Uses AbortController to cancel fetch requests if component unmounts early.
+ */
     useEffect(() => {
         const controller = new AbortController();
         fetchPodcasts(controller.signal);
