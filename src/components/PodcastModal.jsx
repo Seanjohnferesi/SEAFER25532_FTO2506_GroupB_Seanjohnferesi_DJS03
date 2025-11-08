@@ -6,10 +6,12 @@ import { genres  } from "../data";
 import { formatDate } from "../utils/formatDate";
 import { getGenreTitle } from "../utils/getGenreTitle";
 
-export default function PodcastModal({podcast,seasons, closeModal}) {
+export default function PodcastModal({podcast, closeModal}) {
 
     const showGenres = getGenreTitle(podcast.id, genres)
-
+    const showSeasons = Array.from({length: podcast.seasons }, (_, index) => index + 1);
+    console.log(showSeasons)
+    
     return(
         <section className = {`modal ${podcast ? "display-modal" : ""}`}>
             <div className="modal-content">
@@ -52,16 +54,12 @@ export default function PodcastModal({podcast,seasons, closeModal}) {
 
                     <div className="season-list-container">
                         <div className="season-list">
-                            <div className="seasons-clm">
-
-                                <div className="flex-container">
-                                <p className="season-title">{seasons.title}</p>
-                                <p className="season-description"></p>
-                                </div>
-
-                                <p className="ep-num"></p>
-                            </div>
-                
+                           
+                                { Array.from({length: podcast.seasons }, (_, index) => (
+                                    <div className="seasons-clm">
+                                        <p className="season-title" key={index}>Season {index + 1}</p>
+                                    </div>
+                                ))}
                         </div>
                     </div>
 
